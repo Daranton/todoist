@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+
+# TLS/SSL certificates and private keys
+cert.pem
+key.pem
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# PyCharm project files
+.idea/
+
+# Python package distribution
+*.egg-info/
+dist/
+build/
+
+# Logs and DB
+*.log
+*.sqlite3
+*.db
+
+# dotenv environment files
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# pytest cache
+.pytest_cache/
+.cache/
+
+# MyPy & coverage reports
+.mypy_cache/
+.coverage
+htmlcov/
+
+# VSCode (if you use it)
+.vscode/
