@@ -26,8 +26,8 @@ A simple Todo List backend API built with FastAPI, combined with a Python CLI cl
 
 1. Clone this repository:
 
-    git clone https://github.com/yourusername/fastapi-todo-cli.git
-    cd fastapi-todo-cli
+    git clone https://github.com/Daranton/todoist.git
+    cd todoist
 
 2. Install dependencies:
 
@@ -81,6 +81,9 @@ fastapi-todo-cli/
 │   └── database.py       # DB setup
 ├── cli/
 │   └── todo.py           # Typer CLI commands
+├── tests/
+│   ├── test_todo.py      # Todo test
+│   └── test_crud.py      # Crud test
 ├── requirements.txt      # Python dependencies
 ├── cert.pem              # SSL cert (optional)
 ├── key.pem               # SSL key (optional)
