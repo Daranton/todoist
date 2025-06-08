@@ -1,7 +1,12 @@
-from sqlalchemy import Column, Integer, String, Boolean
-from .database import Base
+# SQLAlchemy Model - DB structure + storage
+# Allowed only low-level constraints (nullable, unique)
 
-# Database 
+from sqlalchemy import Column, Integer, String, Boolean
+from app.database import Base
+
+# These should not be used for validation.
+# SQLAlchemy Models. Their role is to map Python objects to database tables.
+
 class Task(Base):
     __tablename__ = "tasks"
 
@@ -9,3 +14,4 @@ class Task(Base):
     title = Column(String, index=True)
     description = Column(String, nullable=True)
     completed = Column(Boolean, default=False)
+    due_date = Column(String, nullable=True)

@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *.pyo
 *.so
+alembic/__pycache__
 
 # TLS/SSL certificates and private keys
 cert.pem
