@@ -1,0 +1,14 @@
+# Ignored files from app/
+__pycache__/
+*.pyc
+*.pyo
+*.db
+.env
+
+
+alembic/versions/
+
+
+.pytest_cache/
+.vscode/
+.idea/
