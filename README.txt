@@ -41,11 +41,14 @@ Running the Backend API
 
 Start the FastAPI server with HTTPS enabled:
 
-    uvicorn app.main:app --host 0.0.0.0 --port 8443 --ssl-keyfile=key.pem --ssl-certfile=cert.pem
+        uvicorn app.main:app --host 0.0.0.0 --port 8443 --ssl-keyfile=key.pem --ssl-certfile=cert.pem (the most reliable way)
+   
     The API will be available at: https://localhost:8443
 
+
     For development without HTTPS, run:
-        uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+        uvicorn app.main:app --host 0.0.0.0 --port 8000 (Often causes errors, will be fixed later)
 
 Using the CLI Client
 
