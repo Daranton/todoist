@@ -6,11 +6,11 @@ A simple Todo List backend API built with FastAPI, combined with a Python CLI cl
 
 ## Features
 
-- **FastAPI REST API** with full CRUD for tasks
-- **SQLite** database backend for local storage
-- **HTTPS support** with self-signed certificates (for development)
-- **Python CLI** powered by Typer to add, list, update, and delete tasks
-- Tasks have `title`, `description`, and `completed` status
+- FastAPI REST API with full CRUD functionality for tasks
+- SQLite database backend for lightweight local storage
+- HTTPS support with self-signed certificates (optional for development)
+- Python CLI powered by Typer to add, list, update, and delete tasks
+- Tasks include `title`, `description`, and `completed` status
 
 ---
 
@@ -24,7 +24,7 @@ A simple Todo List backend API built with FastAPI, combined with a Python CLI cl
 
 ### Installation
 
-1. Clone this repository:
+1. Clone repository:
 
     git clone https://github.com/Daranton/todoist.git
     cd todoist
