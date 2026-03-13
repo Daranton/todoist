@@ -18,7 +18,7 @@ def add(title: str, description: Optional[str] = None):
         data["description"] = description
     response = requests.post(API_URL + "/", json=data, verify=False)
     if response.status_code == 200 or response.status_code == 201:
-        typer.echo(f"Task added: {response.json()['id']} - {response.json()['title']}")
+        typer.echo(f"Task added with ID: {response.json()['id']} - {response.json()['title']}")
     else:
         typer.echo(f"Failed to add task: {response.text}")
 
