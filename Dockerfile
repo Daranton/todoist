@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 8443
 
 # Command to run the app
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8443", "--ssl-keyfile=key.pem", "--ssl-certfile=cert.pem"]
+CMD alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8443 --ssl-keyfile=key.pem --ssl-certfile=cert.pem

@@ -1,9 +1,7 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app import models, schemas, crud
-from app.database import SessionLocal, engine
-
-models.Base.metadata.create_all(bind=engine)
+from app import schemas, crud
+from app.database import SessionLocal
 
 app = FastAPI(title="Todoist API")
 

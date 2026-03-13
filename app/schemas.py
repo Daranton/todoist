@@ -2,7 +2,7 @@
 # Data validation - check input data is correct, complete, meets rules. 
 # Serialization - convert models into JSON-safe data structure for response.
 # Documentation - API docs from schemas & routes
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Optional
 
 class TaskBase(BaseModel):
@@ -21,5 +21,4 @@ class Task(TaskBase):
     id: int
     completed: bool
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)

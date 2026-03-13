@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "todoist": {
+      "command": "python",
+      "args": ["-m", "app.mcp_server"],
+      "cwd": "."
+    }
+  }
+}
