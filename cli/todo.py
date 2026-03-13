@@ -2,8 +2,10 @@ import typer
 import requests
 from typing import Optional
 
+import os
+
 app = typer.Typer()
-API_URL = "https://localhost:8443/tasks"
+API_URL = os.environ.get("TODOIST_API_URL", "http://localhost:8000/tasks")
 
 # For dev, ignore SSL warnings (remove verify=False in prod)
 requests.packages.urllib3.disable_warnings()

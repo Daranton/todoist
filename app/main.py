@@ -1,9 +1,18 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
+from alembic.config import Config
+from alembic import command
 from app import schemas, crud
 from app.database import SessionLocal
 
-app = FastAPI(title="Todoist API")
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    alembic_cfg = Config("alembic.ini")
+    command.upgrade(alembic_cfg, "head")
+    yield
+
+app = FastAPI(title="Todoist API", lifespan=lifespan)
 
 def get_db():
     db = SessionLocal()

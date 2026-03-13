@@ -7,7 +7,7 @@ runner = CliRunner()
 def test_add_and_list_task():
     result = runner.invoke(app, ["add", "CLI test task", "--description", "desc"])
     assert result.exit_code == 0
-    assert "Task added" in result.output
+    assert "Task added with ID" in result.output
 
     result = runner.invoke(app, ["list"])
     assert result.exit_code == 0
