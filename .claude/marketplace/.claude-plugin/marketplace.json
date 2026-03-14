@@ -1,0 +1,14 @@
+{
+  "name": "todoist-local",
+  "description": "Local skills for the todoist project",
+  "owner": {
+    "name": "local"
+  },
+  "plugins": [
+    {
+      "name": "todoist-skills",
+      "description": "Brain dump, triage, standup, and done-today skills for Todoist",
+      "source": "./plugins/todoist-skills"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "todoist-local": {
+      "source": {
+        "source": "directory",
+        "path": ".claude/marketplace"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "todoist-skills@todoist-local": true
+  }
+}
