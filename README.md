@@ -1,6 +1,6 @@
 # Todoist
 
-A simple Todo List API built with FastAPI and SQLite, with a Python CLI client and MCP server integration for AI assistants.
+A simple Todo List API built with FastAPI and SQLite, with a Python CLI client, MCP server integration for AI assistants, and Claude Code skills for natural-language task management.
 
 ---
 
@@ -10,6 +10,8 @@ A simple Todo List API built with FastAPI and SQLite, with a Python CLI client a
 - SQLite database with automatic migrations (Alembic)
 - Python CLI to manage tasks from the terminal (Typer)
 - MCP server so AI assistants (e.g. Claude) can manage tasks directly
+- Claude Code skills (brain-dump, triage) built on top of MCP for higher-level task workflows
+- Local skill marketplace bundled in `.claude/marketplace/`
 - Docker support
 
 ---
@@ -96,6 +98,27 @@ Available tools:
 
 ---
 
+## Claude Code Skills
+
+On top of the MCP server, this project ships a local skill marketplace with higher-level task workflows you can invoke directly from Claude Code.
+
+Skills are located in `.claude/marketplace/plugins/todoist-skills/skills/`.
+
+### Available skills
+
+| Skill | Command | Description |
+|-------|---------|-------------|
+| `brain-dump` | `/brain-dump <freeform text>` | Parse a messy list of thoughts and bulk-create tasks |
+| `triage` | `/triage` | Review all tasks, group by urgency, and clean up stale ones |
+
+Skills call the MCP tools under the hood — the API must be running when you use them.
+
+### Installing the marketplace
+
+The marketplace is pre-configured in `.claude/marketplace/`. Claude Code picks it up automatically when you open the project. If you need to register it manually, point Claude Code at `.claude/marketplace` as a local marketplace source.
+
+---
+
 ## Docker
 
 ```bash
@@ -132,6 +155,17 @@ todoist/
 ├── tests/
 │   ├── test_crud.py
 │   └── test_todo.py
+├── .claude/
+│   └── marketplace/
+│       ├── .claude-plugin/
+│       │   └── marketplace.json   # Local marketplace definition
+│       └── plugins/
+│           └── todoist-skills/
+│               ├── .claude-plugin/
+│               │   └── plugin.json
+│               └── skills/
+│                   ├── brain-dump/SKILL.md
+│                   └── triage/SKILL.md
 ├── .mcp.json             # MCP server config
 ├── docker-compose.yml
 ├── requirements.txt
